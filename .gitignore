@@ -1,0 +1,76 @@
+# =====================
+# Root Git Ignore for prototipo-web01 (backend + frontend)
+# =====================
+
+# Node dependencies
+node_modules/
+
+# Build outputs / bundled artifacts
+/dist/
+/build/
+frontend/dist/
+backend/dist/
+.vite/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment files (keep example)
+.env
+.env.*
+!.env.example
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# IDE settings (optional keep workspace, uncomment if you want to ignore)
+# .vscode/
+# *.code-workspace
+
+# Test coverage / results
+coverage/
+backend/coverage/
+frontend/coverage/
+
+# Database / backups (adjust if you need to version them)
+*.db
+*.sqlite
+backend/data/backups/
+
+# Temporary data / generated content
+*.tmp
+*.temp
+
+# Production bundles (if later added)
+*.zip
+*.tar
+*.tar.gz
+
+# Misc security
+*.pem
+*.key
+*.crt
+
+# Vitest cache
+.vitest/
+
+# ESLint cache
+.eslintcache
+
+# Optional: lockfiles are committed; do NOT ignore them
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Images optimization caches
+*.orig.*
+
+# --- End of .gitignore ---
