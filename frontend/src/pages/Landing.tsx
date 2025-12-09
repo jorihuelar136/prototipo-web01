@@ -185,12 +185,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer Profesional con Videos */}
-      <section className="bg-gray-950 text-white pt-20 pb-12">
-        <div className="mx-auto max-w-6xl px-6">
-          {/* Sección vacía - El Footer.tsx maneja los Shorts/Clips */}
-        </div>
-      </section>
     </div>
   );
 }

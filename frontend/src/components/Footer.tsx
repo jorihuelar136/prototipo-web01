@@ -9,6 +9,10 @@ export default function Footer() {
   const [openShort, setOpenShort] = useState<ShortItem | null>(null);
   const [thumbLoaded, setThumbLoaded] = useState<Record<string, boolean>>({});
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -27,8 +31,20 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gray-950 text-white pt-20 pb-12">
+    <footer className="bg-gray-950 text-white pt-12 pb-12">
       <div className="mx-auto max-w-6xl px-6">
+        {/* Back to Top Button */}
+        <div className="flex justify-end mb-8">
+          <button
+            onClick={scrollToTop}
+            aria-label="Ir al inicio"
+            className="p-3 rounded-full bg-primary-600 hover:bg-primary-700 transition shadow-lg hover:shadow-xl"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-white">
+              <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+          </button>
+        </div>
         {/* Tira de Shorts antes del contenido informativo */}
         <div className="mb-20">
           <h3 className="font-display text-xl mb-4">Shorts / Clips</h3>
