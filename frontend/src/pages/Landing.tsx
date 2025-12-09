@@ -78,7 +78,7 @@ export default function Landing() {
     <div className="flex flex-col">
       {/* Hero Slideshow (imágenes a la izquierda, contenido a la derecha) */}
       <section
-        className="relative w-full text-white overflow-hidden min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] lg:min-h-[85vh] pb-40 sm:pb-0"
+        className="relative w-full text-white overflow-hidden min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] lg:min-h-[80vh] pb-0"
       >
         {/* Slides full-bleed */}
         {heroImages.map((img, i) => (
@@ -100,9 +100,10 @@ export default function Landing() {
           </div>
         ))}
         {/* Overlay contenido alineado a la izquierda */}
-        <div className="relative h-full flex items-center md:items-center">
-          <div className="w-full mx-auto px-6 flex">
-            <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 mt-20 sm:mt-24 md:mt-0 relative z-10">
+        <div className="absolute inset-0 flex flex-col justify-end">
+          <div className="relative h-auto">
+            <div className="mx-auto px-6 flex pb-32 md:pb-0">
+              <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 relative z-10">
               <h1 className="font-display text-4xl max-[360px]:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-white to-primary-100">Red de Hombres</span>
                 <span className="block text-primary-300 max-[360px]:text-[2.1rem]">INVENCIBLE</span>
