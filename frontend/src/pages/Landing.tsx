@@ -101,8 +101,8 @@ export default function Landing() {
         ))}
         {/* Overlay contenido alineado a la izquierda */}
         <div className="relative h-full flex items-center md:items-center">
-          <div className="w-full max-w-7xl mx-auto px-6 flex">
-            <div className="w-full max-w-xl md:max-w-lg lg:max-w-xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 mt-20 sm:mt-24 md:mt-0 relative z-10">
+          <div className="w-full mx-auto px-6 flex">
+            <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 mt-20 sm:mt-24 md:mt-0 relative z-10">
               <h1 className="font-display text-4xl max-[360px]:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-white to-primary-100">Red de Hombres</span>
                 <span className="block text-primary-300 max-[360px]:text-[2.1rem]">INVENCIBLE</span>
@@ -124,7 +124,7 @@ export default function Landing() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
         </div>
   <div className="absolute inset-x-0 bottom-0 backdrop-blur-sm bg-black/55 border-t border-white/10 px-4 sm:px-6 py-4 flex flex-col items-start pointer-events-none" aria-live="polite">
-          <p className="font-slab text-sm max-[360px]:text-[13px] sm:text-base md:text-base italic leading-relaxed text-white/90 w-full break-words">“{heroImages[current].verse}”</p>
+          <p className="font-slab text-base max-[360px]:text-[14px] sm:text-lg md:text-lg lg:text-xl italic leading-relaxed text-white/90 w-full break-words">"{heroImages[current].verse}"</p>
           <p className="mt-2 text-[10px] md:text-[11px] tracking-wide text-primary-200 font-semibold uppercase">{heroImages[current].reference}</p>
         </div>
         {/* Barra de progreso */}
