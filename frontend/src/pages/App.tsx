@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Landing from './Landing';
 import Login from './Login';
 import Register from './Register';
+import Unete from './Unete';
 import Dashboard from './Dashboard';
 import Courses from './Courses';
 import Events from './Events';
@@ -32,6 +33,7 @@ function AppInner() {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/unete" element={<Unete />} />
           <Route path="/dashboard" element={<ProtectedRoute><IntranetLayout><Dashboard /></IntranetLayout></ProtectedRoute>} />
           <Route path="/mentoria" element={<ProtectedRoute><IntranetLayout><Mentoria /></IntranetLayout></ProtectedRoute>} />
           <Route path="/oracion" element={<ProtectedRoute><IntranetLayout><Oracion /></IntranetLayout></ProtectedRoute>} />

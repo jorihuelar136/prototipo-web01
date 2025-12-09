@@ -28,10 +28,11 @@ export default function Navbar() {
           {!isAuthed && (
             <>
               <Link to="/red" className="hover:text-primary-600">La Red</Link>
-              <Link to="/courses" className="hover:text-primary-600">Enseñanzas</Link>
+              <Link to="/ensenanzas" className="hover:text-primary-600">Enseñanzas</Link>
               <Link to="/events" className="hover:text-primary-600">Eventos</Link>
+              <Link to="/unete" className="hover:text-primary-600">Únete</Link>
               <Link to="/login" className="text-gray-700 hover:text-primary-600">Acceder</Link>
-              <Link to="/register" className="rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Unete</Link>
+              <Link to="/register" className="rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
             </>
           )}
           {isAuthed && (
@@ -59,10 +60,11 @@ export default function Navbar() {
             {!isAuthed && (
               <>
                 <Link to="/red" className="block hover:text-primary-600">La Red</Link>
-                <Link to="/courses" className="block hover:text-primary-600">Enseñanzas</Link>
+                <Link to="/ensenanzas" className="block hover:text-primary-600">Enseñanzas</Link>
                 <Link to="/events" className="block hover:text-primary-600">Eventos</Link>
+                <Link to="/unete" className="block hover:text-primary-600">Únete</Link>
                 <Link to="/login" className="block hover:text-primary-600">Acceder</Link>
-                <Link to="/register" className="inline-block rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Regístrate</Link>
+                <Link to="/register" className="inline-block rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
               </>
             )}
             {isAuthed && (
