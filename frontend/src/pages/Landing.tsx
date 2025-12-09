@@ -78,7 +78,7 @@ export default function Landing() {
     <div className="flex flex-col">
       {/* Hero Slideshow (imágenes a la izquierda, contenido a la derecha) */}
       <section
-        className="relative w-full text-white overflow-hidden min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] lg:min-h-[80vh] pb-0"
+        className="relative w-full text-white overflow-hidden min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] lg:min-h-[95vh] pb-0"
       >
         {/* Slides full-bleed */}
         {heroImages.map((img, i) => (
@@ -100,7 +100,7 @@ export default function Landing() {
           </div>
         ))}
         {/* Overlay contenido alineado a la izquierda */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-32 md:pb-0">
+        <div className="absolute inset-0 flex flex-col justify-end pb-40 md:pb-20">
           <div className="relative h-auto">
             <div className="mx-auto px-6 flex">
               <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 relative z-10">
@@ -119,20 +119,21 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        {/* Barra de versículo bíblico - fuera del overlay absoluto */}
-        <div className="relative w-full bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-16 pb-4 pointer-events-none">
-          <div className="backdrop-blur-sm bg-black/55 border-t border-white/10 px-4 sm:px-6 py-4 flex flex-col items-start" aria-live="polite">
-            <p className="font-slab text-base max-[360px]:text-[14px] sm:text-lg md:text-lg lg:text-xl italic leading-relaxed text-white/90 w-full break-words">"{heroImages[current].verse}"</p>
-            <p className="mt-2 text-[10px] md:text-[11px] tracking-wide text-primary-200 font-semibold uppercase">{heroImages[current].reference}</p>
-          </div>
-          {/* Barra de progreso */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden">
-            <div ref={progressRef} className="h-full origin-left bg-gradient-to-r from-primary-400 via-primary-300 to-primary-200 transition-transform will-change-transform" style={{transform:'scaleX(0)'}} />
-          </div>
-        </div>
         {/* Keyframes inline */}
         <style>{`@keyframes fadeSlide {from {opacity:0; transform:translateY(16px);} to {opacity:1; transform:translateY(0);} }`}</style>
       </section>
+
+      {/* Barra de versículo bíblico - debajo del hero */}
+      <div className="relative w-full bg-gradient-to-b from-black/50 via-black/80 to-black/80 px-4 sm:px-6 py-8 text-white">
+        <div className="backdrop-blur-sm bg-black/55 border-t border-white/10 px-4 sm:px-6 py-4 flex flex-col items-start" aria-live="polite">
+          <p className="font-slab text-base max-[360px]:text-[14px] sm:text-lg md:text-lg lg:text-xl italic leading-relaxed text-white/90 w-full break-words">"{heroImages[current].verse}"</p>
+          <p className="mt-2 text-[10px] md:text-[11px] tracking-wide text-primary-200 font-semibold uppercase">{heroImages[current].reference}</p>
+        </div>
+        {/* Barra de progreso */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden">
+          <div ref={progressRef} className="h-full origin-left bg-gradient-to-r from-primary-400 via-primary-300 to-primary-200 transition-transform will-change-transform" style={{transform:'scaleX(0)'}} />
+        </div>
+      </div>
 
       {/* Separador claro entre Hero y CTA (espacio en blanco) */}
   <div className="w-full bg-white h-14 md:h-20" aria-hidden="true" />
