@@ -104,16 +104,17 @@ export default function Landing() {
           <div className="relative h-auto">
             <div className="mx-auto px-6 flex pb-32 md:pb-0">
               <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 relative z-10">
-              <h1 className="font-display text-4xl max-[360px]:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-white to-primary-100">Red de Hombres</span>
-                <span className="block text-primary-300 max-[360px]:text-[2.1rem]">INVENCIBLE</span>
-              </h1>
-              <p className="mt-5 md:mt-6 font-slab text-base max-[360px]:text-[15px] sm:text-lg md:text-xl text-white/90 leading-relaxed md:max-w-lg">
-                Formando Hombres en Semejanza a Cristo.
-              </p>
-              <div className="mt-6 md:mt-7 flex flex-col sm:flex-row gap-4">
-                <a href="/register" className="rounded-lg bg-primary-600 hover:bg-primary-500 px-8 py-4 font-medium text-lg shadow-lg shadow-black/40 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Comenzar Ahora</a>
-                <a href="#vision" className="rounded-lg bg-white/10 backdrop-blur border border-white/25 px-8 py-4 font-medium text-lg hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Áreas Clave</a>
+                <h1 className="font-display text-4xl max-[360px]:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-white to-primary-100">Red de Hombres</span>
+                  <span className="block text-primary-300 max-[360px]:text-[2.1rem]">INVENCIBLE</span>
+                </h1>
+                <p className="mt-5 md:mt-6 font-slab text-base max-[360px]:text-[15px] sm:text-lg md:text-xl text-white/90 leading-relaxed md:max-w-lg">
+                  Formando Hombres en Semejanza a Cristo.
+                </p>
+                <div className="mt-6 md:mt-7 flex flex-col sm:flex-row gap-4">
+                  <a href="/register" className="rounded-lg bg-primary-600 hover:bg-primary-500 px-8 py-4 font-medium text-lg shadow-lg shadow-black/40 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Comenzar Ahora</a>
+                  <a href="#vision" className="rounded-lg bg-white/10 backdrop-blur border border-white/25 px-8 py-4 font-medium text-lg hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Áreas Clave</a>
+                </div>
               </div>
             </div>
           </div>
