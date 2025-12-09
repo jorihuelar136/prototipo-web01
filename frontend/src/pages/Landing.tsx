@@ -100,7 +100,7 @@ export default function Landing() {
           </div>
         ))}
         {/* Overlay contenido alineado a la izquierda */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-40 md:pb-20">
+        <div className="absolute inset-0 flex flex-col justify-end pb-56 md:pb-32">
           <div className="relative h-auto">
             <div className="mx-auto px-6 flex">
               <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 relative z-10">
