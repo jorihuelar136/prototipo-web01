@@ -9,6 +9,7 @@ import CursosHombria from './CursosHombria';
 import Materiales from './Materiales';
 import Conferencias from './Conferencias';
 import Encuentros from './Encuentros';
+import Sedes from './Sedes';
 import Dashboard from './Dashboard';
 import Courses from './Courses';
 import Events from './Events';
@@ -23,6 +24,7 @@ import Administracion from './Administracion';
 import MentorMentees from './MentorMentees';
 import IntranetLayout from '../components/IntranetLayout';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import ProtectedRoute from '../components/ProtectedRoute';
 import { AuthProvider, useAuth } from '../context/AuthContext';
 
@@ -46,6 +48,7 @@ function AppInner() {
           <Route path="/materiales" element={<Materiales />} />
           <Route path="/conferencias" element={<Conferencias />} />
           <Route path="/encuentros" element={<Encuentros />} />
+          <Route path="/sedes" element={<Sedes />} />
           <Route path="/events" element={<Events />} />
           <Route path="/dashboard" element={<ProtectedRoute><IntranetLayout><Dashboard /></IntranetLayout></ProtectedRoute>} />
           <Route path="/mentoria" element={<ProtectedRoute><IntranetLayout><Mentoria /></IntranetLayout></ProtectedRoute>} />
@@ -59,7 +62,7 @@ function AppInner() {
           <Route path="/mentor" element={<ProtectedRoute><IntranetLayout><MentorMentees /></IntranetLayout></ProtectedRoute>} />
         </Routes>
       </main>
-      {/* <footer className="py-6 text-center text-sm text-gray-500">© {new Date().getFullYear()} Desarrollo Integral - Hombres</footer> */}
+      {!isIntranet && <Footer />}
     </div>
   );
 }

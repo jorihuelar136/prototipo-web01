@@ -196,35 +196,6 @@ export default function Landing() {
             <p className="text-xs text-gray-400 mb-3">Momentos rápidos de formación y exhortación. Haz clic para reproducir sin salir de la página.</p>
             <YouTubeShortsStrip />
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <h3 className="font-display text-xl mb-4">Sobre la Red</h3>
-              <p className="text-sm leading-relaxed text-gray-300">Somos una comunidad de hombres que buscan reflejar el carácter de Jesucristo en cada esfera: familia, trabajo, iglesia y sociedad. Formación bíblica, mentoría, liderazgo servicial y servicio práctico.</p>
-            </div>
-            <div>
-              <h3 className="font-display text-xl mb-4">Conecta</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/register" className="hover:text-primary-400 transition">Crear Cuenta</a></li>
-                <li><a href="/login" className="hover:text-primary-400 transition">Acceder</a></li>
-                <li><a href="#vision" className="hover:text-primary-400 transition">Áreas Clave</a></li>
-              </ul>
-              <div className="flex gap-4 mt-6">
-                <a href="https://www.youtube.com/channel/UCBCOOT3I47Qiy47Dlb2cGug" aria-label="YouTube" className="p-2 rounded bg-white/10 hover:bg-white/20 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M10 15l5.19-3L10 9v6z"/><path d="M21.8 8s-.2-1.43-.82-2.06c-.78-.82-1.66-.82-2.06-.87C16.41 5 12 5 12 5h0s-4.41 0-6.92.07c-.4.05-1.28.05-2.06.87C2.4 6.57 2.2 8 2.2 8S2 9.57 2 11.14v1.72c0 1.57.2 3.14.2 3.14s.2 1.43.82 2.06c.78.82 1.8.8 2.26.9 1.64.16 6.72.21 6.72.21s4.42-.01 6.93-.08c.4-.05 1.28-.05 2.06-.87.62-.63.82-2.06.82-2.06s.2-1.57.2-3.14v-1.72C22 9.57 21.8 8 21.8 8z"/></svg>
-                </a>
-                <a href="#" aria-label="Facebook" className="p-2 rounded bg-white/10 hover:bg-white/20 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.79c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12z"/></svg>
-                </a>
-                <a href="#" aria-label="Instagram" className="p-2 rounded bg-white/10 hover:bg-white/20 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z"/><circle cx="12" cy="12" r="3.2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-6 text-xs text-gray-400 flex flex-col sm:flex-row justify-between gap-4">
-            <span>© {new Date().getFullYear()} Red de Hombres Invencible. Todos los derechos reservados.</span>
-            <span>Hombría es semejanza a Cristo.</span>
-          </div>
         </div>
       </section>
     </div>
