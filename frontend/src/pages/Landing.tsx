@@ -100,9 +100,9 @@ export default function Landing() {
           </div>
         ))}
         {/* Overlay contenido alineado a la izquierda */}
-        <div className="absolute inset-0 flex flex-col justify-end">
+        <div className="absolute inset-0 flex flex-col justify-end pb-32 md:pb-0">
           <div className="relative h-auto">
-            <div className="mx-auto px-6 flex pb-32 md:pb-0">
+            <div className="mx-auto px-6 flex">
               <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl pr-0 md:pr-6 animate-[fadeSlide_0.9s_ease] bg-black/35 md:bg-black/30 backdrop-blur-sm rounded-2xl px-5 md:px-6 py-6 ring-1 ring-white/10 shadow-lg shadow-black/40 relative z-10">
                 <h1 className="font-display text-4xl max-[360px]:text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-white to-primary-100">Red de Hombres</span>
@@ -119,25 +119,22 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        {/* Controles prev/next eliminados a petición del usuario */}
-        {/* Indicadores eliminados para interfaz más limpia */}
-        {/* Versículo en barra inferior de ancho completo */}
-        <div className="absolute inset-x-0 bottom-0 pt-10 pointer-events-none" aria-hidden="true">
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-        </div>
-  <div className="absolute inset-x-0 bottom-0 backdrop-blur-sm bg-black/55 border-t border-white/10 px-4 sm:px-6 py-4 flex flex-col items-start pointer-events-none" aria-live="polite">
-          <p className="font-slab text-base max-[360px]:text-[14px] sm:text-lg md:text-lg lg:text-xl italic leading-relaxed text-white/90 w-full break-words">"{heroImages[current].verse}"</p>
-          <p className="mt-2 text-[10px] md:text-[11px] tracking-wide text-primary-200 font-semibold uppercase">{heroImages[current].reference}</p>
-        </div>
-        {/* Barra de progreso */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden">
-          <div ref={progressRef} className="h-full origin-left bg-gradient-to-r from-primary-400 via-primary-300 to-primary-200 transition-transform will-change-transform" style={{transform:'scaleX(0)'}} />
+        {/* Barra de versículo bíblico - fuera del overlay absoluto */}
+        <div className="relative w-full bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-16 pb-4 pointer-events-none">
+          <div className="backdrop-blur-sm bg-black/55 border-t border-white/10 px-4 sm:px-6 py-4 flex flex-col items-start" aria-live="polite">
+            <p className="font-slab text-base max-[360px]:text-[14px] sm:text-lg md:text-lg lg:text-xl italic leading-relaxed text-white/90 w-full break-words">"{heroImages[current].verse}"</p>
+            <p className="mt-2 text-[10px] md:text-[11px] tracking-wide text-primary-200 font-semibold uppercase">{heroImages[current].reference}</p>
+          </div>
+          {/* Barra de progreso */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden">
+            <div ref={progressRef} className="h-full origin-left bg-gradient-to-r from-primary-400 via-primary-300 to-primary-200 transition-transform will-change-transform" style={{transform:'scaleX(0)'}} />
+          </div>
         </div>
         {/* Keyframes inline */}
         <style>{`@keyframes fadeSlide {from {opacity:0; transform:translateY(16px);} to {opacity:1; transform:translateY(0);} }`}</style>
       </section>
 
-  {/* Separador claro entre Hero y CTA (espacio en blanco) */}
+      {/* Separador claro entre Hero y CTA (espacio en blanco) */}
   <div className="w-full bg-white h-14 md:h-20" aria-hidden="true" />
 
       {/* CTA Inmediata */}
@@ -163,6 +160,8 @@ export default function Landing() {
             ))}
           </div>
         </div>
+        {/* Keyframes inline */}
+        <style>{`@keyframes fadeSlide {from {opacity:0; transform:translateY(16px);} to {opacity:1; transform:translateY(0);} }`}</style>
       </section>
 
       {/* Testimonios dinámicos */}
