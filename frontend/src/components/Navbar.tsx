@@ -23,7 +23,15 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition backdrop-blur ${onHero && !solid && !isAuthed ? 'bg-transparent' : 'bg-white/90 shadow'}`}>
       <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
-        <Link to={isAuthed ? '/dashboard' : '/'} className="font-display font-semibold text-lg text-primary-600"></Link>
+        {/* Logo/Icon - Home Link */}
+        <Link to={isAuthed ? '/dashboard' : '/'} className="flex items-center gap-2 hover:opacity-80 transition">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-white">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <span className="font-display font-bold text-sm md:text-base text-primary-700">RHI</span>
+        </Link>
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {!isAuthed && (
