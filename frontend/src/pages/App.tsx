@@ -5,6 +5,10 @@ import Register from './Register';
 import Unete from './Unete';
 import LaRed from './LaRed';
 import Ensenanzas from './Ensenanzas';
+import CursosHombria from './CursosHombria';
+import Materiales from './Materiales';
+import Conferencias from './Conferencias';
+import Encuentros from './Encuentros';
 import Dashboard from './Dashboard';
 import Courses from './Courses';
 import Events from './Events';
@@ -38,6 +42,10 @@ function AppInner() {
           <Route path="/unete" element={<Unete />} />
           <Route path="/red" element={<LaRed />} />
           <Route path="/ensenanzas" element={<Ensenanzas />} />
+          <Route path="/cursos-hombria" element={<CursosHombria />} />
+          <Route path="/materiales" element={<Materiales />} />
+          <Route path="/conferencias" element={<Conferencias />} />
+          <Route path="/encuentros" element={<Encuentros />} />
           <Route path="/events" element={<Events />} />
           <Route path="/dashboard" element={<ProtectedRoute><IntranetLayout><Dashboard /></IntranetLayout></ProtectedRoute>} />
           <Route path="/mentoria" element={<ProtectedRoute><IntranetLayout><Mentoria /></IntranetLayout></ProtectedRoute>} />

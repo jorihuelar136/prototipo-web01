@@ -143,7 +143,7 @@ export default function Landing() {
       {/* CTA Inmediata */}
       <section className="bg-primary-600 py-16 relative shadow-xl shadow-primary-900/20">
         <div className="mx-auto max-w-5xl px-6 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight">Empieza hoy tu proceso</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight">SÉ PARTE DE LA RED</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto font-slab text-lg">Accede a formación, mentoría, eventos y comunidad privada enfocada en reflejar a Cristo.</p>
           <a href="/register" className="inline-block rounded bg-white text-primary-700 font-semibold px-10 py-4 shadow hover:shadow-lg transition">Crear Cuenta</a>
         </div>
@@ -180,7 +180,7 @@ export default function Landing() {
             <button
               onClick={() => setShowEmbeds(true)}
               className={`px-4 py-2 rounded text-xs font-medium border transition ${showEmbeds ? 'bg-primary-600 text-white border-primary-600' : 'bg-white text-primary-700 border-primary-300 hover:bg-primary-50'}`}
-            >Embeds</button>
+            >Instagram</button>
           </div>
           {showEmbeds ? <InstagramEmbeds /> : <InstagramGallery />}
           <p className="mt-8 text-center text-[11px] text-gray-500">Si algún embed no aparece, puede deberse a políticas de Instagram o bloqueo temporal; prueba la vista Galería.</p>

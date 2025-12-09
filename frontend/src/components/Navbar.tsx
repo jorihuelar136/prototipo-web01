@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 export default function Navbar() {
   const { pathname } = useLocation();
   const [solid, setSolid] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
@@ -28,8 +29,43 @@ export default function Navbar() {
           {!isAuthed && (
             <>
               <Link to="/red" className="hover:text-primary-600">La Red</Link>
-              <Link to="/ensenanzas" className="hover:text-primary-600">Enseñanzas</Link>
-              <Link to="/events" className="hover:text-primary-600">Eventos</Link>
+              
+              {/* Submenu Enseñanzas */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setOpenSubmenu('ensenanzas')}
+                onMouseLeave={() => setOpenSubmenu(null)}
+              >
+                <button className="hover:text-primary-600 flex items-center gap-1">
+                  Enseñanzas
+                  <span className="text-xs">▼</span>
+                </button>
+                {openSubmenu === 'ensenanzas' && (
+                  <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-20">
+                    <Link to="/cursos-hombria" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Cursos de Hombría</Link>
+                    <Link to="/materiales" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Materiales</Link>
+                  </div>
+                )}
+              </div>
+              
+              {/* Submenu Eventos */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setOpenSubmenu('eventos')}
+                onMouseLeave={() => setOpenSubmenu(null)}
+              >
+                <button className="hover:text-primary-600 flex items-center gap-1">
+                  Eventos
+                  <span className="text-xs">▼</span>
+                </button>
+                {openSubmenu === 'eventos' && (
+                  <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-20">
+                    <Link to="/conferencias" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Conferencias</Link>
+                    <Link to="/encuentros" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Encuentros</Link>
+                  </div>
+                )}
+              </div>
+              
               <Link to="/unete" className="hover:text-primary-600">Únete</Link>
               <Link to="/login" className="text-gray-700 hover:text-primary-600">Acceder</Link>
               <Link to="/register" className="rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
@@ -60,8 +96,30 @@ export default function Navbar() {
             {!isAuthed && (
               <>
                 <Link to="/red" className="block hover:text-primary-600">La Red</Link>
-                <Link to="/ensenanzas" className="block hover:text-primary-600">Enseñanzas</Link>
-                <Link to="/events" className="block hover:text-primary-600">Eventos</Link>
+                <div>
+                  <button onClick={() => setOpenSubmenu(openSubmenu === 'ensenanzas' ? null : 'ensenanzas')} className="w-full text-left hover:text-primary-600 flex items-center justify-between">
+                    Enseñanzas
+                    <span className={`text-xs transform transition ${openSubmenu === 'ensenanzas' ? 'rotate-180' : ''}`}>▼</span>
+                  </button>
+                  {openSubmenu === 'ensenanzas' && (
+                    <div className="pl-4 mt-2 space-y-2 border-l border-primary-200">
+                      <Link to="/cursos-hombria" className="block hover:text-primary-600">Cursos de Hombría</Link>
+                      <Link to="/materiales" className="block hover:text-primary-600">Materiales</Link>
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <button onClick={() => setOpenSubmenu(openSubmenu === 'eventos' ? null : 'eventos')} className="w-full text-left hover:text-primary-600 flex items-center justify-between">
+                    Eventos
+                    <span className={`text-xs transform transition ${openSubmenu === 'eventos' ? 'rotate-180' : ''}`}>▼</span>
+                  </button>
+                  {openSubmenu === 'eventos' && (
+                    <div className="pl-4 mt-2 space-y-2 border-l border-primary-200">
+                      <Link to="/conferencias" className="block hover:text-primary-600">Conferencias</Link>
+                      <Link to="/encuentros" className="block hover:text-primary-600">Encuentros</Link>
+                    </div>
+                  )}
+                </div>
                 <Link to="/unete" className="block hover:text-primary-600">Únete</Link>
                 <Link to="/login" className="block hover:text-primary-600">Acceder</Link>
                 <Link to="/register" className="inline-block rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
