@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { localShorts, ShortItem } from '../data/shorts';
-import VideoModal from '../components/VideoModal';
 
 // Imágenes hero centradas en Jesucristo / discipulado masculino (rutas locales)
 const heroImages = [
@@ -190,12 +188,7 @@ export default function Landing() {
       {/* Footer Profesional con Videos */}
       <section className="bg-gray-950 text-white pt-20 pb-12">
         <div className="mx-auto max-w-6xl px-6">
-          {/* Tira de Shorts antes del contenido informativo */}
-          <div className="mb-20">
-            <h3 className="font-display text-xl mb-4">Shorts / Clips</h3>
-            <p className="text-xs text-gray-400 mb-3">Momentos rápidos de formación y exhortación. Haz clic para reproducir sin salir de la página.</p>
-            <YouTubeShortsStrip />
-          </div>
+          {/* Sección vacía - El Footer.tsx maneja los Shorts/Clips */}
         </div>
       </section>
     </div>
@@ -376,87 +369,4 @@ function Testimonios() {
 }
 
 // Componente tira de shorts estilo grid sin scroll horizontal
-function YouTubeShortsStrip() {
-  const [shorts, setShorts] = useState<ShortItem[]>(localShorts);
-  const [loadingRemote, setLoadingRemote] = useState(true);
-  const [errorRemote, setErrorRemote] = useState<string | null>(null);
-  const [openShort, setOpenShort] = useState<ShortItem | null>(null);
-  const [thumbLoaded, setThumbLoaded] = useState<Record<string, boolean>>({});
 
-  const fetchShorts = async () => {
-    setLoadingRemote(true); setErrorRemote(null);
-    try {
-      const resp = await fetch('/api/shorts');
-      if (!resp.ok) throw new Error('No se pudo obtener shorts');
-      const data = await resp.json();
-      if (Array.isArray(data) && data.length) setShorts(data);
-    } catch (e: any) {
-      setErrorRemote(e.message || 'Error inesperado');
-    } finally {
-      setLoadingRemote(false);
-    }
-  };
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const resp = await fetch('/api/shorts');
-        if (!resp.ok) throw new Error('No se pudo obtener shorts');
-        const data = await resp.json();
-        if (!cancelled && Array.isArray(data) && data.length) setShorts(data);
-      } catch (e: any) {
-        if (!cancelled) setErrorRemote(e.message || 'Error inesperado');
-      } finally {
-        if (!cancelled) setLoadingRemote(false);
-      }
-    })();
-    return () => { cancelled = true; };
-  }, []);
-
-  return (
-    <div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-        {shorts.map(s => (
-          <button
-            key={s.id}
-            onClick={() => setOpenShort(s)}
-            className="group relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-black shadow focus:outline-none focus:ring-2 focus:ring-primary-500"
-            aria-label={`Reproducir ${s.title}`}
-          >
-            {!thumbLoaded[s.id] && (
-              <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-gray-700 via-gray-600 to-gray-700" />
-            )}
-            <img
-              src={`https://img.youtube.com/vi/${s.videoId}/hqdefault.jpg`}
-              alt={s.title}
-              onLoad={() => setThumbLoaded(prev => ({ ...prev, [s.id]: true }))}
-              className={`h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${thumbLoaded[s.id] ? 'opacity-100' : 'opacity-0'}`}
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-            <span className="absolute bottom-1 left-1 right-1 text-[10px] font-medium text-white/90 drop-shadow-sm text-left overflow-hidden">
-              {s.title}
-            </span>
-            <span className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur p-1 text-white shadow">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M10 8l6 4-6 4V8z"/></svg>
-            </span>
-          </button>
-        ))}
-        {loadingRemote && (
-          <div className="col-span-full text-center text-xs text-gray-400 mt-2 animate-pulse">Cargando shorts...</div>
-        )}
-        {!loadingRemote && errorRemote && (
-          <div className="col-span-full flex flex-col items-center gap-2 mt-3 text-center">
-            <p className="text-[11px] text-red-300">{errorRemote}. Mostrando lista local.</p>
-            <button
-              onClick={fetchShorts}
-              className="px-3 py-1.5 rounded bg-white/10 hover:bg-white/20 text-xs text-white border border-white/15 focus:outline-none focus:ring-2 focus:ring-primary-500"
-            >Reintentar</button>
-          </div>
-        )}
-      </div>
-      <VideoModal short={openShort} onClose={() => setOpenShort(null)} />
-    </div>
-  );
-}
