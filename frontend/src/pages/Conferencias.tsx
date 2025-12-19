@@ -106,19 +106,19 @@ const conferencias = [
   {
     title: 'Identidad Inquebrantable en Cristo',
     desc: 'Conferencia intensiva sobre identidad cristiana en un mundo que intenta redefinirte.',
-    fecha: '15 de Diciembre, 2025',
+    fecha: '24 de Diciembre, 2025',
     lugar: 'Sede Principal',
     hora: '9:00 AM - 1:00 PM',
-    expositor: 'Pastor Carlos Mendez',
+    expositor: 'Pastor Samuel Yalta',
     temas: ['Quién soy en Cristo', 'Libertad de la aprobación humana', 'Vivir conforme a tu identidad', 'Testimonio público']
   },
   {
     title: 'Liderazgo que Sirve',
     desc: 'Formación en liderazgo humilde, servicial y transformador.',
-    fecha: '22 de Diciembre, 2025',
+    fecha: '27 de Diciembre, 2025',
     lugar: 'Centro de Retiros',
     hora: '8:00 AM - 5:00 PM',
-    expositor: 'Prof. David Romero',
+    expositor: 'Lider. Christian Quevedo',
     temas: ['Principios de liderazgo bíblico', 'Gestión de equipos', 'Comunicación efectiva', 'Modelo de Cristo']
   }
 ];
