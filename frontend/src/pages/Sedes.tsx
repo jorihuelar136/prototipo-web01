@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 
 const sedesData = {
   peru: {
@@ -94,9 +94,9 @@ export default function Sedes() {
           <h2 className="text-2xl font-bold mb-6">Selecciona tu país</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {Object.entries(sedesData).map(([key, data]) => (
-              <a
+              <Link
                 key={key}
-                href={`/sedes?pais=${key}`}
+                to={`/sedes?pais=${key}`}
                 className={`p-4 rounded-lg text-center font-semibold transition ${
                   paisParam === key
                     ? 'bg-primary-600 text-white shadow-lg'
@@ -104,7 +104,7 @@ export default function Sedes() {
                 }`}
               >
                 {data.nombre}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
