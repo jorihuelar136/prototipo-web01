@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function LaRed() {
   return (
     <div className="min-h-screen bg-white">
@@ -139,9 +141,12 @@ export default function LaRed() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-display font-bold mb-4">Eres un Hombre Invencible en Cristo</h2>
           <p className="text-lg text-white/90 mb-8">Únete a nuestra comunidad y comienza tu transformación hoy. Juntos crecemos, servimos y reflejamos a Cristo en cada aspecto de nuestras vidas.</p>
-          <a href="/unete" className="inline-block px-10 py-4 bg-white text-primary-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition hover:scale-105">
+          <Link
+            to="/unete"
+            className="inline-block px-10 py-4 bg-white text-primary-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition hover:scale-105"
+          >
             Ver Ruta de Formación
-          </a>
+          </Link>
         </div>
       </section>
     </div>
