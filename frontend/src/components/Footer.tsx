@@ -85,10 +85,10 @@ export default function Footer() {
           <div>
             <h3 className="font-display text-lg mb-4 text-primary-400">Sedes RHI</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to={`${import.meta.env.BASE_URL}sedes?pais=peru`} className="hover:text-primary-400 transition">Perú</Link></li>
-              <li><Link to={`${import.meta.env.BASE_URL}sedes?pais=mexico`} className="hover:text-primary-400 transition">México</Link></li>
-              <li><Link to={`${import.meta.env.BASE_URL}sedes?pais=venezuela`} className="hover:text-primary-400 transition">Venezuela</Link></li>
-              <li><Link to={`${import.meta.env.BASE_URL}sedes?pais=bolivia`} className="hover:text-primary-400 transition">Bolivia</Link></li>
+              <li><Link to="/sedes?pais=peru" className="hover:text-primary-400 transition">Perú</Link></li>
+              <li><Link to="/sedes?pais=mexico" className="hover:text-primary-400 transition">México</Link></li>
+              <li><Link to="/sedes?pais=venezuela" className="hover:text-primary-400 transition">Venezuela</Link></li>
+              <li><Link to="/sedes?pais=bolivia" className="hover:text-primary-400 transition">Bolivia</Link></li>
             </ul>
           </div>
 

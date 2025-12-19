@@ -18,7 +18,7 @@ export default function Navbar() {
   const isAuthed = !!user;
   // Si ya está autenticado y estamos en /login mostrar redirección inmediata sin botón "Ir al panel" visible en login.
   if (initialized && isAuthed && pathname === '/login') {
-    return <Navigate to={`${import.meta.env.BASE_URL}dashboard`} replace />;
+    return <Navigate to="/dashboard" replace />;
   }
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition backdrop-blur ${onHero && !solid && !isAuthed ? 'bg-transparent' : 'bg-white/90 shadow'}`}>
@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {!isAuthed && (
             <>
-              <Link to={`${import.meta.env.BASE_URL}red`} className="hover:text-primary-600">La Red</Link>
+              <Link to="/red" className="hover:text-primary-600">La Red</Link>
               
               {/* Submenu Enseñanzas */}
               <div 
@@ -50,8 +50,8 @@ export default function Navbar() {
                 </button>
                 {openSubmenu === 'ensenanzas' && (
                   <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-20">
-                    <Link to={`${import.meta.env.BASE_URL}cursos-hombria`} className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Cursos de Hombría</Link>
-                    <Link to={`${import.meta.env.BASE_URL}materiales`} className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Materiales</Link>
+                    <Link to="/cursos-hombria" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Cursos de Hombría</Link>
+                    <Link to="/materiales" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Materiales</Link>
                   </div>
                 )}
               </div>
@@ -68,15 +68,15 @@ export default function Navbar() {
                 </button>
                 {openSubmenu === 'eventos' && (
                   <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-20">
-                    <Link to={`${import.meta.env.BASE_URL}conferencias`} className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Conferencias</Link>
-                    <Link to={`${import.meta.env.BASE_URL}encuentros`} className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Encuentros</Link>
+                    <Link to="/conferencias" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Conferencias</Link>
+                    <Link to="/encuentros" className="block px-4 py-2 hover:bg-primary-50 hover:text-primary-600">Encuentros</Link>
                   </div>
                 )}
               </div>
               
-              <Link to={`${import.meta.env.BASE_URL}unete`} className="hover:text-primary-600">Únete</Link>
-              <Link to={`${import.meta.env.BASE_URL}login`} className="text-gray-700 hover:text-primary-600">Acceder</Link>
-              <Link to={`${import.meta.env.BASE_URL}register`} className="rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
+              <Link to="/unete" className="hover:text-primary-600">Únete</Link>
+              <Link to="/login" className="text-gray-700 hover:text-primary-600">Acceder</Link>
+              <Link to="/register" className="rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
             </>
           )}
           {isAuthed && (
@@ -86,7 +86,7 @@ export default function Navbar() {
                 <span className="text-[10px] text-primary-600">{user.email}</span>
               </div>
               {/* En rutas públicas distintas a /login permitir botón para ir al panel */}
-              {pathname !== '/login' && <Link to={`${import.meta.env.BASE_URL}dashboard`} className="text-xs px-4 py-2 rounded bg-primary-600 text-white hover:bg-primary-500 shadow">Panel</Link>}
+              {pathname !== '/login' && <Link to="/dashboard" className="text-xs px-4 py-2 rounded bg-primary-600 text-white hover:bg-primary-500 shadow">Panel</Link>}
             </div>
           )}
         </div>
@@ -103,7 +103,7 @@ export default function Navbar() {
           <div className="px-6 pt-2 pb-6 space-y-3 text-sm font-medium">
             {!isAuthed && (
               <>
-                <Link to={`${import.meta.env.BASE_URL}red`} className="block hover:text-primary-600">La Red</Link>
+                <Link to="/red" className="block hover:text-primary-600">La Red</Link>
                 <div>
                   <button onClick={() => setOpenSubmenu(openSubmenu === 'ensenanzas' ? null : 'ensenanzas')} className="w-full text-left hover:text-primary-600 flex items-center justify-between">
                     Enseñanzas
@@ -111,8 +111,8 @@ export default function Navbar() {
                   </button>
                   {openSubmenu === 'ensenanzas' && (
                     <div className="pl-4 mt-2 space-y-2 border-l border-primary-200">
-                      <Link to={`${import.meta.env.BASE_URL}cursos-hombria`} className="block hover:text-primary-600">Cursos de Hombría</Link>
-                      <Link to={`${import.meta.env.BASE_URL}materiales`} className="block hover:text-primary-600">Materiales</Link>
+                      <Link to="/cursos-hombria" className="block hover:text-primary-600">Cursos de Hombría</Link>
+                      <Link to="/materiales" className="block hover:text-primary-600">Materiales</Link>
                     </div>
                   )}
                 </div>
@@ -123,20 +123,20 @@ export default function Navbar() {
                   </button>
                   {openSubmenu === 'eventos' && (
                     <div className="pl-4 mt-2 space-y-2 border-l border-primary-200">
-                      <Link to={`${import.meta.env.BASE_URL}conferencias`} className="block hover:text-primary-600">Conferencias</Link>
-                      <Link to={`${import.meta.env.BASE_URL}encuentros`} className="block hover:text-primary-600">Encuentros</Link>
+                      <Link to="/conferencias" className="block hover:text-primary-600">Conferencias</Link>
+                      <Link to="/encuentros" className="block hover:text-primary-600">Encuentros</Link>
                     </div>
                   )}
                 </div>
-                <Link to={`${import.meta.env.BASE_URL}unete`} className="block hover:text-primary-600">Únete</Link>
-                <Link to={`${import.meta.env.BASE_URL}login`} className="block hover:text-primary-600">Acceder</Link>
-                <Link to={`${import.meta.env.BASE_URL}register`} className="inline-block rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
+                <Link to="/unete" className="block hover:text-primary-600">Únete</Link>
+                <Link to="/login" className="block hover:text-primary-600">Acceder</Link>
+                <Link to="/register" className="inline-block rounded bg-primary-600 text-white px-4 py-2 hover:bg-primary-500 shadow transition">Crear Cuenta</Link>
               </>
             )}
             {isAuthed && (
               <div className="space-y-2">
                 <div className="text-xs text-gray-600">{user.email}</div>
-                <Link to={`${import.meta.env.BASE_URL}dashboard`} className="block text-primary-600">Dashboard</Link>
+                <Link to="/dashboard" className="block text-primary-600">Dashboard</Link>
               </div>
             )}
           </div>

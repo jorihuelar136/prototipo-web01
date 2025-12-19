@@ -96,7 +96,7 @@ export default function Sedes() {
             {Object.entries(sedesData).map(([key, data]) => (
               <a
                 key={key}
-                href={`${import.meta.env.BASE_URL}sedes?pais=${key}`}
+                href={`/sedes?pais=${key}`}
                 className={`p-4 rounded-lg text-center font-semibold transition ${
                   paisParam === key
                     ? 'bg-primary-600 text-white shadow-lg'

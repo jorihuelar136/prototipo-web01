@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Imágenes hero centradas en Jesucristo / discipulado masculino (rutas locales)
 const heroImages = [
@@ -112,7 +113,7 @@ export default function Landing() {
                   Formando Hombres en Semejanza a Cristo.
                 </p>
                 <div className="mt-6 md:mt-7 flex flex-col sm:flex-row gap-4">
-                  <a href={`${import.meta.env.BASE_URL}register`} className="rounded-lg bg-primary-600 hover:bg-primary-500 px-8 py-4 font-medium text-lg shadow-lg shadow-black/40 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Comenzar Ahora</a>
+                  <Link to="/register" className="rounded-lg bg-primary-600 hover:bg-primary-500 px-8 py-4 font-medium text-lg shadow-lg shadow-black/40 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Comenzar Ahora</Link>
                   <a href="#vision" className="rounded-lg bg-white/10 backdrop-blur border border-white/25 px-8 py-4 font-medium text-lg hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Áreas Clave</a>
                 </div>
               </div>
@@ -143,7 +144,7 @@ export default function Landing() {
         <div className="mx-auto max-w-5xl px-6 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight">SÉ PARTE DE LA RED</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto font-slab text-lg">Accede a formación, mentoría, eventos y comunidad privada enfocada en reflejar a Cristo.</p>
-                  <a href={`${import.meta.env.BASE_URL}register`} className="inline-block rounded bg-white text-primary-700 font-semibold px-10 py-4 shadow hover:shadow-lg transition">Crear Cuenta</a>
+                  <Link to="/register" className="inline-block rounded bg-white text-primary-700 font-semibold px-10 py-4 shadow hover:shadow-lg transition">Crear Cuenta</Link>
         </div>
       </section>
 

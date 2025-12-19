@@ -10,6 +10,22 @@
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-800">
     <div id="root"></div>
+    <!-- Handle GitHub Pages 404 redirect that passes original path as ?p=... -->
+    <script>
+      (function(){
+        try {
+          const params = new URLSearchParams(location.search);
+          const p = params.get('p');
+          if (p) {
+            const decoded = decodeURIComponent(p);
+            // Replace state with the original path so the SPA router can handle it
+            history.replaceState(null, document.title, decoded + location.hash);
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
