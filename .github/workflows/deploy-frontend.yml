@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - feature/session-pages
+      - feature/cambios-v2
       - main
+
+# Grant the workflow permissions required to create and push pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -28,5 +35,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Use a personal access token stored as a repository secret named DEPLOY_TOKEN
+          # Create one at https://github.com/settings/tokens with at least 'repo' scope
+          # and add it in the repository Settings -> Secrets -> Actions as DEPLOY_TOKEN.
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: ./frontend/dist
