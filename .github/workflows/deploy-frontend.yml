@@ -3,7 +3,6 @@ name: Build and deploy frontend to GitHub Pages
 on:
   push:
     branches:
-      - feature/session-pages
       - feature/cambios-v2
       - main
 
