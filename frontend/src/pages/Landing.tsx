@@ -3,25 +3,25 @@ import { useEffect, useRef, useState } from 'react';
 // Imágenes hero centradas en Jesucristo / discipulado masculino (rutas locales)
 const heroImages = [
   {
-    url: '/hero/hero1.jpg',
+    url: `${import.meta.env.BASE_URL}hero/hero1.jpg`,
     alt: 'Cruz iluminada al amanecer frente al mar',
     verse: 'Velad, estad firmes en la fe; portaos varonilmente, y esforzaos. Todas vuestras cosas sean hechas con amor.',
     reference: '1 Corintios 16:13-14'
   },
   {
-    url: '/hero/hero2.jpg',
+    url: `${import.meta.env.BASE_URL}hero/hero2.jpg`,
     alt: 'Círculo de hombres orando juntos con Biblias abiertas',
     verse: 'Hierro con hierro se aguza; y así el hombre aguza el rostro de su amigo.',
     reference: 'Proverbios 27:17'
   },
   {
-    url: '/hero/hero3.jpg',
+    url: `${import.meta.env.BASE_URL}hero/hero3.jpg`,
     alt: 'Hombre contemplando una cruz en la cima de una montaña',
     verse: 'Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.',
     reference: 'Josué 1:9'
   },
   {
-    url: '/hero/hero4.jpg',
+    url: `${import.meta.env.BASE_URL}hero/hero4.jpg`,
     alt: 'Grupo de hombres estudiando la Biblia en mesa de madera',
     verse: 'Lo que has oído de mí ante muchos testigos, esto encarga a hombres fieles que sean idóneos para enseñar también a otros.',
     reference: '2 Timoteo 2:2'
@@ -232,7 +232,7 @@ function InstagramGallery() {
         >
           <div className="relative w-full aspect-[4/5] flex items-center justify-center bg-white">
             <img
-              src={`/galeria/${img.file}`}
+              src={`${import.meta.env.BASE_URL}galeria/${img.file}`}
               alt={img.alt}
               loading="lazy"
               className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-[1.04]"
