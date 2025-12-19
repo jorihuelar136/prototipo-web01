@@ -27,9 +27,9 @@ jobs:
         working-directory: frontend
         run: npm ci
 
-      - name: Build front-end (relative assets)
+      - name: Build front-end
         working-directory: frontend
-        run: npm run build -- --base ./
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
