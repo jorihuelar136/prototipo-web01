@@ -8,6 +8,6 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
   if (!initialized) {
     return <div className="w-full flex items-center justify-center py-24 text-sm text-gray-500">Verificando sesión...</div>;
   }
-  if (!user && initialized) return <Navigate to="/login" replace />;
+  if (!user && initialized) return <Navigate to={`${import.meta.env.BASE_URL}login`} replace />;
   return <>{children}</>; 
 }
