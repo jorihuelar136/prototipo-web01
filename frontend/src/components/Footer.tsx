@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { localShorts, ShortItem } from '../data/shorts';
 import VideoModal from './VideoModal';
 
 export default function Footer() {
+  const location = useLocation();
+  const isHome = location.pathname === '/' || location.pathname === '';
   const [shorts, setShorts] = useState<ShortItem[]>(localShorts);
   const [loadingRemote, setLoadingRemote] = useState(true);
   const [openShort, setOpenShort] = useState<ShortItem | null>(null);
@@ -45,40 +47,56 @@ export default function Footer() {
             </svg>
           </button>
         </div>
-        {/* Tira de Shorts antes del contenido informativo */}
-        <div className="mb-20">
-          <h3 className="font-display text-xl mb-4">Shorts / Clips</h3>
-          <p className="text-xs text-gray-400 mb-3">Momentos rápidos de formación y exhortación. Haz clic para reproducir sin salir de la página.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {shorts.map(s => (
-              <button
-                key={s.id}
-                onClick={() => setOpenShort(s)}
-                className="group relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-black shadow focus:outline-none focus:ring-2 focus:ring-primary-500"
-                aria-label={`Reproducir ${s.title}`}
-              >
-                {!thumbLoaded[s.id] && (
-                  <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-gray-700 via-gray-600 to-gray-700" />
-                )}
-                <img
-                  src={`https://img.youtube.com/vi/${s.videoId}/hqdefault.jpg`}
-                  alt={s.title}
-                  onLoad={() => setThumbLoaded(prev => ({ ...prev, [s.id]: true }))}
-                  className={`h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${thumbLoaded[s.id] ? 'opacity-100' : 'opacity-0'}`}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                <span className="absolute bottom-1 left-1 right-1 text-[10px] font-medium text-white/90 drop-shadow-sm text-left overflow-hidden">
-                  {s.title}
-                </span>
-                <span className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur p-1 text-white shadow">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M10 8l6 4-6 4V8z"/></svg>
-                </span>
-              </button>
-            ))}
+        {/* Tira de Shorts: solo en Home. En otras páginas mostrar enlaces a secciones */}
+        {isHome ? (
+          <div className="mb-20">
+            <h3 className="font-display text-xl mb-4">Shorts / Clips</h3>
+            <p className="text-xs text-gray-400 mb-3">Momentos rápidos de formación y exhortación. Haz clic para reproducir sin salir de la página.</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {shorts.map(s => (
+                <button
+                  key={s.id}
+                  onClick={() => setOpenShort(s)}
+                  className="group relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-black shadow focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  aria-label={`Reproducir ${s.title}`}
+                >
+                  {!thumbLoaded[s.id] && (
+                    <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-gray-700 via-gray-600 to-gray-700" />
+                  )}
+                  <img
+                    src={`https://img.youtube.com/vi/${s.videoId}/hqdefault.jpg`}
+                    alt={s.title}
+                    onLoad={() => setThumbLoaded(prev => ({ ...prev, [s.id]: true }))}
+                    className={`h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${thumbLoaded[s.id] ? 'opacity-100' : 'opacity-0'}`}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                  <span className="absolute bottom-1 left-1 right-1 text-[10px] font-medium text-white/90 drop-shadow-sm text-left overflow-hidden">
+                    {s.title}
+                  </span>
+                  <span className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur p-1 text-white shadow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M10 8l6 4-6 4V8z"/></svg>
+                  </span>
+                </button>
+              ))}
+            </div>
+            {!loadingRemote && <VideoModal short={openShort} onClose={() => setOpenShort(null)} />}
           </div>
-          {!loadingRemote && <VideoModal short={openShort} onClose={() => setOpenShort(null)} />}
-        </div>
+        ) : (
+          <div className="mb-8">
+            <h3 className="font-display text-xl mb-4">Ir a</h3>
+            <p className="text-xs text-gray-400 mb-3">Accede a las secciones principales del sitio.</p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Inicio</Link>
+              <Link to="/sedes" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Sedes</Link>
+              <Link to="/ensenanzas" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Enseñanzas</Link>
+              <Link to="/cursos-hombria" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Cursos</Link>
+              <Link to="/materiales" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Materiales</Link>
+              <Link to="/shorts" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Shorts / Clips</Link>
+              <Link to="/unete" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Únete</Link>
+            </div>
+          </div>
+        )}
         {/* Grid de 4 columnas */}
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Sedes */}
