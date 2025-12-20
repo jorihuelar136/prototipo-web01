@@ -35,68 +35,103 @@ export default function Footer() {
   return (
     <footer className="bg-gray-950 text-white pt-12 pb-12">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Back to Top Button */}
-        <div className="flex justify-end mb-8">
-          <button
-            onClick={scrollToTop}
-            aria-label="Ir al inicio"
-            className="p-3 rounded-full bg-primary-600 hover:bg-primary-700 transition shadow-lg hover:shadow-xl"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-white">
-              <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-            </svg>
-          </button>
-        </div>
-        {/* Tira de Shorts: solo en Home. En otras páginas mostrar enlaces a secciones */}
         {isHome ? (
-          <div className="mb-20">
-            <h3 className="font-display text-xl mb-4">Shorts / Clips</h3>
-            <p className="text-xs text-gray-400 mb-3">Momentos rápidos de formación y exhortación. Haz clic para reproducir sin salir de la página.</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-              {shorts.map(s => (
-                <button
-                  key={s.id}
-                  onClick={() => setOpenShort(s)}
-                  className="group relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-black shadow focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  aria-label={`Reproducir ${s.title}`}
-                >
-                  {!thumbLoaded[s.id] && (
-                    <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-gray-700 via-gray-600 to-gray-700" />
-                  )}
-                  <img
-                    src={`https://img.youtube.com/vi/${s.videoId}/hqdefault.jpg`}
-                    alt={s.title}
-                    onLoad={() => setThumbLoaded(prev => ({ ...prev, [s.id]: true }))}
-                    className={`h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${thumbLoaded[s.id] ? 'opacity-100' : 'opacity-0'}`}
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                  <span className="absolute bottom-1 left-1 right-1 text-[10px] font-medium text-white/90 drop-shadow-sm text-left overflow-hidden">
-                    {s.title}
-                  </span>
-                  <span className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur p-1 text-white shadow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M10 8l6 4-6 4V8z"/></svg>
-                  </span>
-                </button>
-              ))}
+          <>
+            {/* Back to Top Button */}
+            <div className="flex justify-end mb-8">
+              <button
+                onClick={scrollToTop}
+                aria-label="Ir al inicio"
+                className="p-3 rounded-full bg-primary-600 hover:bg-primary-700 transition shadow-lg hover:shadow-xl"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-white">
+                  <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+                </svg>
+              </button>
             </div>
-            {!loadingRemote && <VideoModal short={openShort} onClose={() => setOpenShort(null)} />}
-          </div>
-        ) : (
-          <div className="mb-8">
-            <h3 className="font-display text-xl mb-4">Ir a</h3>
-            <p className="text-xs text-gray-400 mb-3">Accede a las secciones principales del sitio.</p>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Inicio</Link>
-              <Link to="/sedes" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Sedes</Link>
-              <Link to="/ensenanzas" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Enseñanzas</Link>
-              <Link to="/cursos-hombria" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Cursos</Link>
-              <Link to="/materiales" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Materiales</Link>
-              <Link to="/shorts" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Shorts / Clips</Link>
-              <Link to="/unete" className="px-3 py-2 bg-white/5 rounded hover:bg-primary-600 transition">Únete</Link>
+
+            {/* Tira de Shorts */}
+            <div className="mb-20">
+              <h3 className="font-display text-xl mb-4">Shorts / Clips</h3>
+              <p className="text-xs text-gray-400 mb-3">Momentos rápidos de formación y exhortación. Haz clic para reproducir sin salir de la página.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                {shorts.map(s => (
+                  <button
+                    key={s.id}
+                    onClick={() => setOpenShort(s)}
+                    className="group relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-black shadow focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    aria-label={`Reproducir ${s.title}`}
+                  >
+                    {!thumbLoaded[s.id] && (
+                      <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-gray-700 via-gray-600 to-gray-700" />
+                    )}
+                    <img
+                      src={`https://img.youtube.com/vi/${s.videoId}/hqdefault.jpg`}
+                      alt={s.title}
+                      onLoad={() => setThumbLoaded(prev => ({ ...prev, [s.id]: true }))}
+                      className={`h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${thumbLoaded[s.id] ? 'opacity-100' : 'opacity-0'}`}
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    <span className="absolute bottom-1 left-1 right-1 text-[10px] font-medium text-white/90 drop-shadow-sm text-left overflow-hidden">
+                      {s.title}
+                    </span>
+                    <span className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur p-1 text-white shadow">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M10 8l6 4-6 4V8z"/></svg>
+                    </span>
+                  </button>
+                ))}
+              </div>
+              {!loadingRemote && <VideoModal short={openShort} onClose={() => setOpenShort(null)} />}
             </div>
-          </div>
-        )}
+
+            {/* Grid de 4 columnas (menu completo) */}
+            <div className="grid md:grid-cols-4 gap-12 mb-16">
+              {/* Sedes */}
+              <div>
+                <h3 className="font-display text-lg mb-4 text-primary-400">Sedes RHI</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><Link to="/sedes?pais=peru" className="hover:text-primary-400 transition">Perú</Link></li>
+                  <li><Link to="/sedes?pais=mexico" className="hover:text-primary-400 transition">México</Link></li>
+                  <li><Link to="/sedes?pais=venezuela" className="hover:text-primary-400 transition">Venezuela</Link></li>
+                  <li><Link to="/sedes?pais=bolivia" className="hover:text-primary-400 transition">Bolivia</Link></li>
+                </ul>
+              </div>
+
+              {/* Recursos */}
+              <div>
+                <h3 className="font-display text-lg mb-4 text-primary-400">Recursos</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><a href="#" className="hover:text-primary-400 transition">Prédicas</a></li>
+                  <li><Link to="/ensenanzas" className="hover:text-primary-400 transition">Enseñanzas</Link></li>
+                  <li><Link to="/cursos-hombria" className="hover:text-primary-400 transition">Cursos</Link></li>
+                  <li><Link to="/materiales" className="hover:text-primary-400 transition">Materiales</Link></li>
+                </ul>
+              </div>
+
+              {/* Contactos */}
+              <div>
+                <h3 className="font-display text-lg mb-4 text-primary-400">Contactos</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><a href="mailto:info@redhombres.org" className="hover:text-primary-400 transition">Envía un mensaje</a></li>
+                  <li><a href="#" className="hover:text-primary-400 transition">Invita a RHI a tu evento</a></li>
+                  <li><Link to="/unete" className="hover:text-primary-400 transition">Únete a la comunidad</Link></li>
+                </ul>
+              </div>
+
+              {/* Servicios */}
+              <div>
+                <h3 className="font-display text-lg mb-4 text-primary-400">Servicios</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><a href="#" className="hover:text-primary-400 transition">Ayuda Social</a></li>
+                  <li><a href="#" className="hover:text-primary-400 transition">Consejería Familiar</a></li>
+                  <li><a href="#" className="hover:text-primary-400 transition">Asesorías Profesionales</a></li>
+                  <li><a href="#" className="hover:text-primary-400 transition">Haz una donación</a></li>
+                </ul>
+              </div>
+            </div>
+          </>
+        ) : null}
         {/* Grid de 4 columnas */}
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Sedes */}

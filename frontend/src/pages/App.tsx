@@ -25,6 +25,7 @@ import MentorMentees from './MentorMentees';
 import IntranetLayout from '../components/IntranetLayout';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 import ProtectedRoute from '../components/ProtectedRoute';
 import { AuthProvider, useAuth } from '../context/AuthContext';
 
@@ -36,7 +37,8 @@ function AppInner() {
   return (
     <div className="min-h-screen flex flex-col">
       {!isIntranet && <Navbar />}
-      <main className={isIntranet ? 'flex-1' : 'flex-1 pt-16'}>
+      <ScrollToTop />
+      <main tabIndex={-1} className={isIntranet ? 'flex-1' : 'flex-1 pt-16'}>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
