@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirecting...</title>
+    <script>
+      // Simple fallback for SPA routing on GitHub Pages
+      (function () {
+        var path = location.pathname + location.search + location.hash;
+        var index = './index.html';
+        // redirect to index.html so SPA can read the path and route
+        location.replace(index + '?p=' + encodeURIComponent(path));
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

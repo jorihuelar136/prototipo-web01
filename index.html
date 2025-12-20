@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Red de Hombres Invencible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/prototipo-web01/assets/index-DXwSM2__.js"></script>
+    <link rel="stylesheet" crossorigin href="/prototipo-web01/assets/index-DKWBLwLf.css">
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-800">
+    <div id="root"></div>
+    <!-- Handle GitHub Pages 404 redirect that passes original path as ?p=... -->
+    <script>
+      (function(){
+        try {
+          const params = new URLSearchParams(location.search);
+          const p = params.get('p');
+          if (p) {
+            const decoded = decodeURIComponent(p);
+            // Replace state with the original path so the SPA router can handle it
+            history.replaceState(null, document.title, decoded + location.hash);
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+  </body>
+</html>
