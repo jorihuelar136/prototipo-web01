@@ -141,10 +141,10 @@ export default function Footer() {
             <a href="https://www.youtube.com/channel/UCBCOOT3I47Qiy47Dlb2cGug" aria-label="YouTube" className="p-2 rounded bg-white/10 hover:bg-primary-600 transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M10 15l5.19-3L10 9v6z"/><path d="M21.8 8s-.2-1.43-.82-2.06c-.78-.82-1.66-.82-2.06-.87C16.41 5 12 5 12 5h0s-4.41 0-6.92.07c-.4.05-1.28.05-2.06.87C2.4 6.57 2.2 8 2.2 8S2 9.57 2 11.14v1.72c0 1.57.2 3.14.2 3.14s.2 1.43.82 2.06c.78.82 1.8.8 2.26.9 1.64.16 6.72.21 6.72.21s4.42-.01 6.93-.08c.4-.05 1.28-.05 2.06-.87.62-.63.82-2.06.82-2.06s.2-1.57.2-3.14v-1.72C22 9.57 21.8 8 21.8 8z"/></svg>
             </a>
-            <a href="#" aria-label="Facebook" className="p-2 rounded bg-white/10 hover:bg-primary-600 transition">
+            <a href="https://www.facebook.com/reddehombresiwp/" aria-label="Facebook" className="p-2 rounded bg-white/10 hover:bg-primary-600 transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.79c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12z"/></svg>
             </a>
-            <a href="#" aria-label="Instagram" className="p-2 rounded bg-white/10 hover:bg-primary-600 transition">
+            <a href="https://www.instagram.com/reddehombresiwp/" aria-label="Instagram" className="p-2 rounded bg-white/10 hover:bg-primary-600 transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z"/><circle cx="12" cy="12" r="3.2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
             </a>
           </div>
