@@ -155,7 +155,7 @@ const calendario = [
     title: 'Encuentro Mensual Enero',
     fecha: '12 de Enero, 2026',
     desc: 'Comienzo de año: rennovación y visión 2026 con toda la Red.',
-    lugar: 'Centro Principal',
+    lugar: 'Centro Principal - Surco',
     hora: '3:00 PM - 7:00 PM',
     icon: '🎉'
   },
@@ -163,7 +163,7 @@ const calendario = [
     title: 'Retiro de Invierno',
     fecha: '24-26 de Enero, 2026',
     desc: 'Profundización espiritual en contexto de retiro con naturaleza.',
-    lugar: 'Centro de Retiros Las Montañas',
+    lugar: 'Centro de Retiros - Cieneguilla',
     hora: 'Viernes 6PM - Domingo 3PM',
     icon: '⛺'
   },
@@ -171,7 +171,7 @@ const calendario = [
     title: 'Encuentro Temático: Paternidad',
     fecha: '8 de Febrero, 2026',
     desc: 'Sesión especial enfocada en los desafíos de ser padre hoy.',
-    lugar: 'Salón de Conferencias',
+    lugar: 'Centro Principal - Surco',
     hora: '10:00 AM - 1:00 PM',
     icon: '👨‍👧‍👦'
   }
