@@ -132,51 +132,7 @@ export default function Footer() {
             </div>
           </>
         ) : null}
-        {/* Grid de 4 columnas */}
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          {/* Sedes */}
-          <div>
-            <h3 className="font-display text-lg mb-4 text-primary-400">Sedes RHI</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/sedes?pais=peru" className="hover:text-primary-400 transition">Perú</Link></li>
-              <li><Link to="/sedes?pais=mexico" className="hover:text-primary-400 transition">México</Link></li>
-              <li><Link to="/sedes?pais=venezuela" className="hover:text-primary-400 transition">Venezuela</Link></li>
-              <li><Link to="/sedes?pais=bolivia" className="hover:text-primary-400 transition">Bolivia</Link></li>
-            </ul>
-          </div>
-
-          {/* Recursos */}
-          <div>
-            <h3 className="font-display text-lg mb-4 text-primary-400">Recursos</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-primary-400 transition">Prédicas</a></li>
-              <li><Link to="/ensenanzas" className="hover:text-primary-400 transition">Enseñanzas</Link></li>
-              <li><Link to="/cursos-hombria" className="hover:text-primary-400 transition">Cursos</Link></li>
-              <li><Link to="/materiales" className="hover:text-primary-400 transition">Materiales</Link></li>
-            </ul>
-          </div>
-
-          {/* Contactos */}
-          <div>
-            <h3 className="font-display text-lg mb-4 text-primary-400">Contactos</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="mailto:info@redhombres.org" className="hover:text-primary-400 transition">Envía un mensaje</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition">Invita a RHI a tu evento</a></li>
-              <li><Link to="/unete" className="hover:text-primary-400 transition">Únete a la comunidad</Link></li>
-            </ul>
-          </div>
-
-          {/* Servicios */}
-          <div>
-            <h3 className="font-display text-lg mb-4 text-primary-400">Servicios</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-primary-400 transition">Ayuda Social</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition">Consejería Familiar</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition">Asesorías Profesionales</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition">Haz una donación</a></li>
-            </ul>
-          </div>
-        </div>
+        {/* full menu only appears above when isHome is true */}
 
         {/* Social Links */}
         <div className="border-t border-white/10 pt-8 mb-8">
