@@ -113,7 +113,7 @@ export default function Landing() {
                   Formando Hombres en Semejanza a Cristo.
                 </p>
                 <div className="mt-6 md:mt-7 flex flex-col sm:flex-row gap-4">
-                  <Link to="/register" className="rounded-lg bg-primary-600 hover:bg-primary-500 px-8 py-4 font-medium text-lg shadow-lg shadow-black/40 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Comenzar Ahora</Link>
+                  <Link to="/unete" className="rounded-lg bg-primary-600 hover:bg-primary-500 px-8 py-4 font-medium text-lg shadow-lg shadow-black/40 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Comenzar Ahora</Link>
                   <a href="#vision" className="rounded-lg bg-white/10 backdrop-blur border border-white/25 px-8 py-4 font-medium text-lg hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-black">Áreas Clave</a>
                 </div>
               </div>
