@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Materiales() {
   return (
     <div className="min-h-screen bg-white">
@@ -85,9 +87,9 @@ export default function Materiales() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-display font-bold mb-4">¿Necesitas Más Recursos?</h2>
           <p className="text-lg text-white/90 mb-8">Accede a nuestra biblioteca completa de materiales en la intranet con tu cuenta de miembro.</p>
-          <a href="/login" className="inline-block px-10 py-4 bg-white text-purple-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition">
+          <Link to="/unete"className="inline-block px-10 py-4 bg-white text-purple-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition">
             Acceder a Biblioteca
-          </a>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function CursosHombrĺa() {
   return (
     <div className="min-h-screen bg-white">
@@ -62,9 +64,14 @@ export default function CursosHombrĺa() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-display font-bold mb-4">Comienza tu Formación Hoy</h2>
           <p className="text-lg text-white/90 mb-8">Elige el nivel que corresponde a tu caminar actual y avanza en semejanza a Cristo.</p>
-          <a href="/unete" className="inline-block px-10 py-4 bg-white text-primary-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition">
+   
+          <Link
+              to="/unete"
+              className="inline-block px-10 py-4 bg-white text-primary-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition"
+            >
             Registrarse Ahora
-          </a>
+            </Link>
+
         </div>
       </section>
     </div>

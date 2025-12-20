@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Conferencias() {
   return (
     <div className="min-h-screen bg-white">
@@ -93,9 +95,14 @@ export default function Conferencias() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-display font-bold mb-4">No Te Pierdas la Próxima Conferencia</h2>
           <p className="text-lg text-white/90 mb-8">Espacios limitados. Regístrate hoy para asegurar tu lugar.</p>
-          <a href="/unete" className="inline-block px-10 py-4 bg-white text-amber-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition">
-            Registrarme Ahora
-          </a>
+          
+          <Link
+            to="/unete"
+            className="inline-block px-10 py-4 bg-white text-primary-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition"
+          >
+          Registrarse Ahora
+          </Link>
+
         </div>
       </section>
     </div>
